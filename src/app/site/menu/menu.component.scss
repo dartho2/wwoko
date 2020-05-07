@@ -12,3 +12,22 @@ td {
     color: #e93e21;
     font-size: 36px !important;
 }
+
+.menu-details-menu {
+    --default-height: 500px;
+  }
+  
+  .menu-details-menu {
+    top:72px;
+    position: fixed;
+  }
+  
+  .menu-details-menu {
+    position: sticky;
+    z-index: 1000;
+    // height:150px;
+  }
+  .d-inline {
+      display: inline;
+  }
+  

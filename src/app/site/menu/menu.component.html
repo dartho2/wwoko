@@ -31,7 +31,14 @@
     </div>
     </div>
 </section> -->
-<div *ngFor="let menuItems of menu">
+<div class="menu-details-menu container">
+  <div class="d-inline" *ngFor="let menuItems of menu">
+    <button class="button" id="submit" type="button" (click)="scrollToElement(menuItems.id_class)">{{menuItems.category}}</button>
+</div>
+</div>
+
+<div id="{{menuItems.id_class}}" *ngFor="let menuItems of menu">
+  
 <!-- <section class="menu-list-bg bg-overlay-black-70" style="background-image: url(images/bg/03.jpg);">
   <div class="container text-center">
     <div class="row content-text">
@@ -39,7 +46,7 @@
     </div>
   </div>
 </section> -->
-<section  *ngIf="!menuItems.img"  class="our-menu page-section-pt mb-20">
+<section *ngIf="!menuItems.img"  class="our-menu page-section-pt mb-20">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12">
@@ -53,7 +60,8 @@
     </div>
     </div>
 </section>
-  <section  *ngIf="menuItems.img" class="menu-list-bg bg-overlay-black-70" style="background-image: url({{menuItems.img}});">
+
+  <section #target *ngIf="menuItems.img" class="menu-list-bg bg-overlay-black-70" style="background-image: url({{menuItems.img}});">
     <div class="container text-center">
       <div class="row content-text">
         <h2>{{menuItems.category}}</h2>
@@ -64,6 +72,8 @@
 
 <!--=================================
 menu-list-bg -->
+
+
 
 <section class="our-menu page-section-pt mb-20">
   <div class="container">
