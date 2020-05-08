@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuDishComponent implements OnInit {
-
+  currentSection = 'cieple_dania';
 
 
   menu: any[] = [{
@@ -556,6 +556,17 @@ export class MenuDishComponent implements OnInit {
   }
   scrollToElement($element): void {
     document.getElementById($element).scrollIntoView({behavior: 'smooth'});
+  }
+ 
+
+  onSectionChange(sectionId: string) {
+    console.log("fs", sectionId)
+    this.currentSection = sectionId;
+  }
+
+  scrollTo(section) {
+    document.querySelector('#' + section)
+    .scrollIntoView();
   }
 
 }
