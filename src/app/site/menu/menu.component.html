@@ -33,7 +33,7 @@
 </section> -->
 <div class="menu-details-menu container">
   <div class="d-inline" *ngFor="let menuItems of menu">
-    <button class="button" [ngClass]="{'button button-active': currentSection=== menuItems.id_class, 'button':currentSection !== menuItems.id_class }" id="submit" type="button" (click)='onSectionChange(menuItems.id_class)'>
+    <button class="button" [ngClass]="{'button button-active': currentSection=== menuItems.id_class, 'button':currentSection !== menuItems.id_class }" id="submit" type="button" (click)='scrollTo(menuItems.id_class)'>
       {{menuItems.category}}
     </button>
   </div>
