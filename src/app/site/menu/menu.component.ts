@@ -5,7 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuDishComponent implements OnInit {
-  currentSection = 'cieple_dania';
+  currentSection = '';
 
 
   menu: any[] = [{
