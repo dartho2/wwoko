@@ -560,7 +560,6 @@ export class MenuDishComponent implements OnInit {
  
 
   onSectionChange(sectionId: string) {
-    console.log("fs", sectionId)
     this.currentSection = sectionId;
   }
 

@@ -248,7 +248,10 @@ header { position: relative; background: #1e2327; }
 .button-black-medium { padding: 12px 20px; }
 
 /* Home 1 */
-.header{ padding: 0; position: inherit; background: #1e2327; }	
+.header{ padding: 0; 
+    /* position: inherit; */
+    position: fixed;
+     background: #1e2327; }	
 .slider {  overflow:inherit; }
 .header .mega-menu > section.menu-list-items { float: none; padding: 6px 0; }
 .header .mega-menu .menu-mobile-collapse-trigger { top: 3px; }
