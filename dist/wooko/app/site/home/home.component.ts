@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
     body.appendChild(script);
   }
   ngOnInit() {
+    
+    this.loadScript('assets/revolution/js/jquery.themepunch.tools.min.js');
+    this.loadScript('assets/revolution/js/jquery.themepunch.revolution.min.js');
     this.loadScript('assets/revolution/js/extensions/revolution.extension.actions.min.js');
     this.loadScript('assets/revolution/js/extensions/revolution.extension.carousel.min.js');
     this.loadScript('assets/revolution/js/extensions/revolution.extension.kenburn.min.js');

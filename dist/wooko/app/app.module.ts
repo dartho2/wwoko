@@ -14,6 +14,8 @@ import { NgxMasonryModule } from 'ngx-masonry';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GalleryModule } from  '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
+
+import { ScrollSpyDirective } from '../app/site/scroll-spy.directive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,11 +24,14 @@ import { LightboxModule } from  '@ngx-gallery/lightbox';
     MenuComponent,
     FooterComponent,
     ContactComponent,
-    GalleryComponent
+    GalleryComponent,
+    ScrollSpyDirective
   ],
   imports: [
     GalleryModule,
-    LightboxModule,
+    LightboxModule.withConfig({
+      panelClass: 'fullscreen'
+    }),
     BrowserModule,
     BrowserAnimationsModule,
     NgxMasonryModule,

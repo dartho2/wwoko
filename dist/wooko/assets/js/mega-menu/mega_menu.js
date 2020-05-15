@@ -276,11 +276,24 @@
                         // add the css on menu links
                         menu_links.css({
                             'maxHeight': settings.mobile_settings.scrollBar_height + 'px',
-                            'overflow': 'auto'
+                            'overflow': 'auto',
+                        });
+                        $this.find(mobile_trigger_button).on('click', function () {
+                            // check if the menu links and menu social bar hide
+                            if (drop_down.is(':hidden')) {
+                                // show the drop down
+                                $(this).addClass(activeClass);
+                                drop_down.show(0);
+                            } else {
+                                // hide the drop down
+                                $(this).removeClass(activeClass);
+                                drop_down.hide(0);
+                            }
+                            return false;
                         });
                     }
                 },
-                // menu fixed on top
+                // menu fixed on to
                 top_Fixed: function () {
                     // check if the top fixed true for desktop mode
                     if (settings.top_fixed === true) {

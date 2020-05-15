@@ -35,15 +35,18 @@
   <div class="container">
       <div class="isotope popup-gallery columns-4">
           <ngx-masonry [options]="masonryOptions" style="width:100%;">
-        <div ngxMasonryItem *ngFor="let image of masonryImages" class="grid-item {{image.tag}}">
+        <div ngxMasonryItem *ngFor="let image of masonryImages; index as i" class="grid-item {{image.tag}}">
           <div class="galllery-item">
             <span>
-                <img [src]="image.img" width="100%">
+              <img
+              [lightbox]="i"
+              [src]="image.srcUrl">
             </span>
-            <div class="overlay">
+            <div class="overlay" [lightbox]="i">
               <div class="overlay-content">
                 <h3> <a href="#"> {{image.name}}</a> </h3>
-                <a class="portfolio-img" href="{{image.img}}"><i class="fa fa-expand"></i></a>
+                <div class="portfolio-img" 
+                ><i class="fa fa-expand"></i></div>
               </div>
             </div>
           </div>
