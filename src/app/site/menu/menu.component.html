@@ -33,14 +33,16 @@
 </section> -->
 <div class="menu-details-menu container">
   <div class="d-inline" *ngFor="let menuItems of menu">
-    <button class="button" [ngClass]="{'button button-active': currentSection=== menuItems.id_class, 'button':currentSection !== menuItems.id_class }" id="submit" type="button" (click)='scrollTo(menuItems.id_class)'>
+    <button class="button"
+      [ngClass]="{'button button-active': currentSection=== menuItems.id_class, 'button':currentSection !== menuItems.id_class }"
+      id="submit" type="button" (click)='scrollTo(menuItems.id_class)'>
       {{menuItems.category}}
     </button>
   </div>
 </div>
 
 <div id="parentDiv" scrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)">
-  <div  id="{{menuItems.id_class}}" *ngFor="let menuItems of menu">
+  <div id="{{menuItems.id_class}}" *ngFor="let menuItems of menu">
     <!-- <section class="menu-list-bg bg-overlay-black-70" style="background-image: url(images/bg/03.jpg);">
   <div class="container text-center">
     <div class="row content-text">
@@ -75,14 +77,37 @@
 
 
 
-    <div  class="our-menu page-section-pt mb-20">
+    <div class="our-menu page-section-pt mb-20">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12" *ngFor="let dishItem of menuItems.dish">
             <div class="menu-body menu-left simple menu-white">
               <div class="menu-details">
                 <div class="menu-title clearfix">
-                  <h4> <span class="number-dish">{{dishItem.number}}</span> {{dishItem.name}}</h4>
+                  <table class="menu-desc-list">
+                    <tr>
+                      <td class="number-dish col-lg-1 col-md-1 col-sm-1">
+                        <h4> <span class="number-dish">{{dishItem.number}}</span> </h4>
+                      </td>
+                      <td class="name-dish col-lg-9 col-md-9 col-sm-9">
+                        <h4>{{dishItem.name}}</h4>
+                      </td>
+                      <td class="col-lg-1 col-md-1 col-sm-1 price" *ngFor="let price of dishItem.price">
+                        <div class="price-margin" *ngIf="price.size">
+                          <table>
+                            <tr>
+                              <th>{{price.size}} </th>
+                            </tr>
+                            <tr>
+                              <td>{{price.price}}</td>
+                            </tr>
+                          </table>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-1" *ngIf="!price.size"> {{price.price}}</div>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- <h4> <span class="number-dish">{{dishItem.number}}</span> {{dishItem.name}}</h4>
                   <span class="price" *ngFor="let price of dishItem.price">
                     <div class="price-margin" *ngIf="price.size">
                       <table>
@@ -95,7 +120,7 @@
                       </table>
                     </div>
                     <div *ngIf="!price.size"> {{price.price}}</div>
-                  </span>
+                  </span> -->
                 </div>
                 <div class="menu-description">
                   <p>{{dishItem.description}}</p>

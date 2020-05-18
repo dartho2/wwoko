@@ -1,5 +1,5 @@
 .price-margin {
-  margin-top: -40px;
+  // margin-top: -40px;
 }
 
 th {
@@ -10,9 +10,15 @@ th {
 td {
   text-align: right;
 }
-
+.menu-desc-list{
+  width: 100%;
+}
+.name-dish {
+  text-align: left;
+}
 .number-dish {
   color: #e93e21;
+  text-align: left;
   font-size: 36px !important;
 }
 
