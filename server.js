@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-
+global['window'] = window;
 app.use(express.static('./dist/wooko'));
 
 app.get('/*', (req, res) => {

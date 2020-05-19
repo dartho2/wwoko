@@ -1,0 +1,40 @@
+<div class="inner-intro parallax bg-overlay-black-70" style="background-image: url(assets/images/bg/header_section_rafal.jpg);">
+    <div class="container">
+      <div class="row text-center intro-title">
+        <h1 class="text-orange">Galeria</h1>
+        <p class="text-white">Zapraszamy do Naszej galerii</p>
+        <ul class="page-breadcrumb">
+          
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!--=================================
+     intro bg -->
+  
+  <!--=================================
+     gallery -->
+  
+  <section class="gallery white-bg page-section-ptb">
+      <div class="container">
+        <div class="gallerize-example col-md-12">
+
+            <div *ngFor="let item of items; index as i" class="col-md-4 galllery-item">
+                <span>
+                    <img 
+                    [lightbox]="i"
+                    [src]="item.data.thumb">
+                </span>
+                <div class="overlay" [lightbox]="i">
+                  <div class="overlay-content">
+                    <h3> <a href="#"> {{item.data.desc}}</a> </h3>
+                    <div class="portfolio-img" 
+                    ><i class="fa fa-expand"></i></div>
+                  </div>
+                </div>
+          </div>
+        </div>
+    </div>        
+  </section>
+ 
