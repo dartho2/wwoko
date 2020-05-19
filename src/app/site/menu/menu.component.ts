@@ -254,7 +254,7 @@ export class MenuDishComponent implements OnInit {
     }]
   },
   {
-    category: "Ciepłe Daia",
+    category: "Ciepłe Dania",
     id_class: "cieple_dania",
     img: "assets/images/bg/5_smakow.jpg",
     dish: [{
