@@ -564,9 +564,8 @@ export class MenuDishComponent implements OnInit {
   }
 
   scrollTo(section) {
-    document.querySelector('#' + section)
+   document.querySelector('#' + section)
     .scrollIntoView({behavior: "smooth"});
-  
     this.currentSection = section;
   }
 

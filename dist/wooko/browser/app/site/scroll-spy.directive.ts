@@ -22,6 +22,7 @@ export class ScrollSpyDirective {
             if (this.spiedTags.some(spiedTag => spiedTag === element.tagName)) {
                 if ((element.offsetTop - parentOffset) <= window.scrollY) {
                     currentSection = element.id;
+                    this.sectionChange.emit(this.currentSection);
                     
                 }
             }
