@@ -111,10 +111,24 @@
                         // apply css
                         menu_searchBar.addClass(activeClass);
                         // add the click trigger
+                        $this.find(menu_links).on('click', function () {
+                            if (drop_down.is(':hidden')) {
+                                // show the drop down
+                                console.log('click')
+                                $this.find(mobile_trigger_button).addClass(activeClass);
+                                drop_down.show(0);
+                            } else {
+                                // hide the drop down
+                                $this.find(mobile_trigger_button).removeClass(activeClass);
+                                drop_down.hide(0);
+                            }
+                            return false;
+                        }),
                         $this.find(mobile_trigger_button).on('click', function () {
                             // check if the menu links and menu social bar hide
                             if (drop_down.is(':hidden')) {
                                 // show the drop down
+                                console.log('click')
                                 $(this).addClass(activeClass);
                                 drop_down.show(0);
                             } else {
