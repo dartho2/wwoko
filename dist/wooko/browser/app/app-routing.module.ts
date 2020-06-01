@@ -4,6 +4,7 @@ import { MenuDishComponent } from './site/menu/menu.component';
 import { HomeComponent } from './site/home/home.component';
 import { ContactComponent } from './site/contact/contact.component';
 import { GalleryComponent } from './site/gallery/gallery.component';
+import { NewsComponent } from './site/news/news.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: 'menu', component: MenuDishComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'gallery', component: GalleryComponent },
+  
+  { path: 'news', component: NewsComponent },
 ];
 
 @NgModule({

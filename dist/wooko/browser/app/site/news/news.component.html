@@ -1,0 +1,57 @@
+<div class="inner-intro parallax bg-overlay-black-70" style="background-image: url(assets/images/bg/08.jpg);">
+  <div class="container">
+    <div class="row text-center intro-title">
+      <h1 class="text-orange">Aktualności</h1>
+      <p class="text-white">Aktualności Loco Wokbar</p>
+      <ul class="page-breadcrumb">
+
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+    <div class="our-menu page-section-pt mb-20">
+      <div class="container">
+        <div class="row">
+           
+<div *ngFor="let new of news; let i = index" class="blog-entry border mb-50 col-md-6">
+          <div class="blog-entry-image">
+            <img class="img-responsive" alt="" src="{{new.img}}">
+            <div class="entry-date">
+              {{new.updated_at | date:'W'}}<span>{{new.updated_at | date:'MMM'}}</span>
+            </div>
+          </div>
+          <div class="entry-content">
+            <div class="entry-title">
+              <h3><a href="blog-single.html">{{new.title}}</a></h3>
+            </div>
+            <div class="entry-meta">
+            
+            <!-- <a href="#"><i class="fa fa-user"></i> By The Zayka</a>
+            <a href="#"><i class="fa fa-comments-o"></i> 5 Comments</a>
+            <a href="#"><i class="fa fa-tags"></i> Food </a> -->
+          </div>
+          <div [ngClass]="{'entry-description': news[i].c === false, 'entry-description-c': news[i].c !== false }" class="">
+            <p>{{new.descriptions}}</p> 
+          </div>
+          <div class="entry-share clearfix">
+               <div class="entry-button">
+               <a class="button-arrow" (click)="readMore(i)">Czytaj Więcej<i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+             </div>  
+             <div class="social list-style-none pull-right">
+                <!-- <strong>Share : </strong>
+                <ul>
+                  <li><a href="#"> <i class="fa fa-facebook"></i> </a></li>
+                  <li><a href="#"> <i class="fa fa-twitter"></i> </a></li>
+                  <li><a href="#"> <i class="fa fa-pinterest-p"></i> </a></li>
+                  <li><a href="#"> <i class="fa fa-dribbble"></i> </a></li>
+                </ul> -->
+             </div>
+           </div>
+          </div>
+        </div>
+  </div>
+</div>
+</div>

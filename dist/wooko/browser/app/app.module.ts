@@ -16,6 +16,7 @@ import { GalleryModule } from  '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
 
 import { ScrollSpyDirective } from '../app/site/scroll-spy.directive';
+import { NewsComponent } from './site/news/news.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { ScrollSpyDirective } from '../app/site/scroll-spy.directive';
     FooterComponent,
     ContactComponent,
     GalleryComponent,
-    ScrollSpyDirective
+    ScrollSpyDirective,
+    NewsComponent
   ],
   imports: [
     GalleryModule,
