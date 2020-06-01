@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   title = 'app';
+  news;
   public loadScript(url: string) {
     const body = <HTMLDivElement>document.body;
     const script = document.createElement('script');
@@ -17,7 +19,12 @@ export class HomeComponent implements OnInit {
     body.appendChild(script);
   }
   ngOnInit() {
+    this.newsService.getNews().subscribe(x => {
+      this.news = x
+    })
     
+
+    // this.loadScript('assets/revolution/js/owl.carousel.min.js');
     this.loadScript('assets/revolution/js/jquery.themepunch.tools.min.js');
     this.loadScript('assets/revolution/js/jquery.themepunch.revolution.min.js');
     this.loadScript('assets/revolution/js/extensions/revolution.extension.actions.min.js');
@@ -31,6 +38,6 @@ export class HomeComponent implements OnInit {
     this.loadScript('assets/revolution/js/extensions/revolution.extension.video.min.js');
     this.loadScript('assets/revolution/js/revolution-custom.js');
   }
-  constructor() { }
+  constructor(private newsService: NewsService) { }
 
 }
