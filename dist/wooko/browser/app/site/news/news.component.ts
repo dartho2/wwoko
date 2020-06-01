@@ -8,11 +8,11 @@ import { NewsService } from '../../services/news.service'
 })
 export class NewsComponent implements OnInit {
   news;
-  tabs=[];
   
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
+    window.scrollTo(0, 0)
     this.newsService.getNews().subscribe(x => {
       this.news = x
       this.news.forEach(element => {
