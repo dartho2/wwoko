@@ -15,6 +15,7 @@ export class GalleryComponent implements OnInit {
   }
 
   ngOnInit() {
+    window.scrollTo(0, 0)
     // 1. Create gallery items
     this.items = data.map(item =>
       new ImageItem({ src: item.srcUrl, thumb: item.srcUrl, desc: item.desc })
