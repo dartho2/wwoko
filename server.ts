@@ -6,7 +6,19 @@ import { join } from 'path';
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
+const http = require('http');
+const https = require('https');
 
+const fs = require('fs');
+const privateKey = fs.readFileSync('./cert/key.key');
+const certyficate = fs.readFileSync('./cert/crt.crt');
+const credentials = {
+  key: privateKey,
+  cert: certyficate
+}
+
+const httpServer = http.createServer(app);
+const httpsServer = https.createServer(credentials, app);
 // The Express app is exported so that it can be used by serverless Functions.
 export function app() {
   const server = express();
@@ -42,9 +54,17 @@ function run() {
 
   // Start up the Node server
   const server = app();
-  server.listen(port, () => {
-    console.log(`Node Express server listening on http://localhost:${port}`);
+  // server.listen(port, () => {
+  //   console.log(`Node Express server listening on http://localhost:${port}`);
+  // });
+  httpServer.listen(80, () => {
+    console.log('Server Https started on 80')
   });
+  
+  httpsServer.listen(443, () => {
+    console.log('Server Https started on 443')
+  });
+  
 }
 
 // Webpack will replace 'require' with '__webpack_require__'
