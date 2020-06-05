@@ -11,6 +11,7 @@ const credentials = {
   key: privateKey,
   cert: certyficate
 }
+enableProdMode();
 app.use(function(req, res, next) {
   if (req.secure) {
       next();
@@ -23,7 +24,12 @@ app.use(express.static('./dist/wooko'));
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
-
+app.engine('html', ngExpressEngine({
+  bootstrap: AppServerModuleNgFactory,
+  providers: [
+    provideModuleMap(LAZY_MODULE_MAP)
+  ]
+}));
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '/dist/wooko/index.html'));
 });

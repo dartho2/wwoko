@@ -1,4 +1,6 @@
 // global['window'] = window;
+import {join} from 'path';
+
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -11,6 +13,7 @@ const credentials = {
   key: privateKey,
   cert: certyficate
 }
+const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 app.use(function(req, res, next) {
   if (req.secure) {
       next();
@@ -23,6 +26,8 @@ app.use(express.static('./dist/wooko'));
 
 const httpServer = http.createServer(app);
 const httpsServer = https.createServer(credentials, app);
+app.set('view engine', 'html');
+app.set('views', DIST_FOLDER);
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '/dist/wooko/index.html'));
