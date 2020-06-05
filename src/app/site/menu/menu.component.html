@@ -69,6 +69,7 @@
       <div class="container text-center">
         <div class="row content-text">
           <h2>{{menuItems.category}}</h2>
+          <p *ngIf="menuItems.description.length > 0">{{menuItems.description}}</p>
         </div>
       </div>
     </div>
@@ -121,7 +122,7 @@
                     <div *ngIf="!price.size"> {{price.price}}</div>
                   </span> -->
                 </div>
-                <div class="menu-description">
+                <div *ngIf="dishItem.description.length > 0"class="menu-description">
                   <p>{{dishItem.description}}</p>
                 </div>
 
