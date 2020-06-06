@@ -3,7 +3,6 @@ import 'zone.js/dist/zone-node';
 import { ngExpressEngine } from '@nguniversal/express-engine';
 import * as express from 'express';
 import { join } from 'path';
-
 import { AppServerModule } from './src/main.server';
 import { APP_BASE_HREF } from '@angular/common';
 import { existsSync } from 'fs';
@@ -38,7 +37,8 @@ export function app() {
 }
 
 function run() {
-  const port = process.env.PORT || 4000;
+  
+  const port = process.env.PORT || 80;
 
   // Start up the Node server
   const server = app();
@@ -56,5 +56,7 @@ const moduleFilename = mainModule && mainModule.filename || '';
 if (moduleFilename === __filename || moduleFilename.includes('iisnode')) {
   run();
 }
+
+
 
 export * from './src/main.server';

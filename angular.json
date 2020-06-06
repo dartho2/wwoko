@@ -66,7 +66,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wooko:build"
+            "browserTarget": "wooko:build",
+            "ssl": true,
+            "sslKey": "cert/key.key",
+            "sslCert": "cert/crt.crt"
           },
           "configurations": {
             "production": {
@@ -146,6 +149,7 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "options": {
+            
             "browserTarget": "wooko:build",
             "serverTarget": "wooko:server"
           },
