@@ -11,6 +11,6 @@ export class MenuService {
   }
 
   getMenu(): Observable<MenuService[]> {
-    return this._http.get<MenuService[]>('http://loco-wokbar.pl:8080/api/menu');
+    return this._http.get<MenuService[]>('https://loco-wokbar.pl:8080/api/menu');
   }
 }

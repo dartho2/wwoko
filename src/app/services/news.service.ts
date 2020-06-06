@@ -11,6 +11,6 @@ export class NewsService {
   }
 
   getNews(): Observable<NewsService[]> {
-    return this._http.get<NewsService[]>('http://loco-wokbar.pl:8080/api/news');
+    return this._http.get<NewsService[]>('https://loco-wokbar.pl:8080/api/news');
   }
 }
