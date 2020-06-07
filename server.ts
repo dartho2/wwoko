@@ -45,11 +45,14 @@ const DIST_FOLDER =  join(process.cwd(), 'dist/wooko/browser');
 
 const indexHtml = existsSync(join(DIST_FOLDER, 'index.original.html')) ? 'index.original.html' : 'index';
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-// const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main');
+ const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/server/main');
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
   bootstrap: AppServerModule,
+providers: [
+    provideModuleMap(LAZY_MODULE_MAP)
+  ]
 }));
 
 app.set('view engine', 'html');
