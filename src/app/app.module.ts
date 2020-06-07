@@ -14,7 +14,7 @@ import { GalleryComponent } from './site/gallery/gallery.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GalleryModule } from  '@ngx-gallery/core';
 import { LightboxModule } from  '@ngx-gallery/lightbox';
-
+import { ModuleMapLoaderModule } from '@nguniversal/module-map-ngfactory-loader';
 import { ScrollSpyDirective } from '../app/site/scroll-spy.directive';
 import { NewsComponent } from './site/news/news.component';
 @NgModule({
@@ -30,6 +30,7 @@ import { NewsComponent } from './site/news/news.component';
     NewsComponent
   ],
   imports: [
+ModuleMapLoaderModule, 
     GalleryModule,
     LightboxModule.withConfig({
       panelClass: 'fullscreen'
