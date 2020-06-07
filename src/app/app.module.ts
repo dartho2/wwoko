@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from "@angular/common/http";
-
+import { ServerModule } from '@angular/platform-server';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './site/home/home.component';
@@ -32,6 +32,7 @@ import { NewsComponent } from './site/news/news.component';
   imports: [
 ModuleMapLoaderModule, 
     GalleryModule,
+ServerModule, 
     LightboxModule.withConfig({
       panelClass: 'fullscreen'
     }),
